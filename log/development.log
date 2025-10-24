@@ -1,0 +1,957 @@
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Blog'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Blog'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Blog'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-10-23 15:14:23.658692', '2025-10-23 15:14:23.658694') RETURNING "key" /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Migrating to CreatePosts (20251023151419)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Blog'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251023151419') RETURNING "version" /*application='Blog'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:15:06 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 79ms (Views: 15.2ms | ActiveRecord: 2.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:15:08 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 12.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:15:09 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:15:16 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 15.6ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:15:17 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-10-23 17:15:33 +0200
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Primo", "body"=>"Questo è il primo post."}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (2.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES ('Primo', 'Questo è il primo post.', '2025-10-23 15:15:33.565565', '2025-10-23 15:15:33.565565') RETURNING "id" /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/posts/1
+↳ app/controllers/posts_controller.rb:28:in `block (2 levels) in create'
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:15:33 +0200
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 2.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 30.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2025-10-23 17:15:34 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 6.0ms | GC: 2.5ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 7.2ms | GC: 2.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 2.5ms)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:15:35 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Migrating to CreateComments (20251023151618)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Blog'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+) /*application='Blog'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id") /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251023151618') RETURNING "version" /*application='Blog'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:17:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:17:33 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.8ms)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:17:34 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 1.4ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:17:35 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2025-10-23 17:17:37 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:17:38 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:17:38 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:17:39 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2025-10-23 17:17:40 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:17:42 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:24:14 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:24:16 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:24:19 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.3ms | GC: 0.3ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.3ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:25:33 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered comments/_comments.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement #to_partial_path.)
+Caused by: ArgumentError ('nil' is not an ActiveModel-compatible object. It must implement #to_partial_path.)
+
+Information for: ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement #to_partial_path.):
+    1: <h4>Comments</h4>
+    2: 
+    3: <%= render @comments %>
+    4: 
+    5: <%= render "comments/new", post: post %>
+  
+app/views/comments/_comments.html.erb:4
+app/views/posts/_post.html.erb:13
+app/views/posts/index.html.erb:10
+app/views/posts/index.html.erb:9
+
+Information for cause: ArgumentError ('nil' is not an ActiveModel-compatible object. It must implement #to_partial_path.):
+  
+app/views/comments/_comments.html.erb:4
+app/views/posts/_post.html.erb:13
+app/views/posts/index.html.erb:10
+app/views/posts/index.html.erb:9
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-10-23 17:25:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:27:11 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 2.5ms | GC: 0.2ms)
+  Rendered comments/_comments.html.erb (Duration: 17.8ms | GC: 1.4ms)
+  Rendered posts/_post.html.erb (Duration: 18.1ms | GC: 1.4ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.3ms | GC: 2.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | GC: 2.1ms)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 2.1ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2025-10-23 17:27:24 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Commento uno"}, "commit"=>"Post Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `parms' for an instance of CommentsController):
+  
+app/controllers/comments_controller.rb:20:in `comment_params'
+app/controllers/comments_controller.rb:5:in `create'
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:27:45 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 1.7ms | GC: 0.5ms)
+  Rendered comments/_comments.html.erb (Duration: 7.9ms | GC: 3.8ms)
+  Rendered posts/_post.html.erb (Duration: 8.3ms | GC: 3.8ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.2ms | GC: 3.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 3.8ms)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 3.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:27:49 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2025-10-23 17:27:50 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"commento prova"}, "commit"=>"Post Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (1.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES (1, 'commento prova', '2025-10-23 15:27:50.227367', '2025-10-23 15:27:50.227367') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 302 Found in 22ms (ActiveRecord: 2.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:27:50 +0200
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.4ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:28:22 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:28:50 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.5ms | GC: 0.1ms)
+  Rendered posts/_post.html.erb (Duration: 5.0ms | GC: 0.1ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2025-10-23 17:29:02 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"commento due\n"}, "commit"=>"Post Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES (1, 'commento due
+', '2025-10-23 15:29:02.776727', '2025-10-23 15:29:02.776727') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:02 +0200
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:29:04 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 1.1ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:29:06 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.9ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:29:06 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2025-10-23 17:29:08 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:08 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:10 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:11 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 11.5ms | GC: 7.7ms)
+  Rendered posts/_post.html.erb (Duration: 11.7ms | GC: 7.7ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 13.6ms | GC: 7.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | GC: 7.7ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 7.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2025-10-23 17:29:12 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.0ms | GC: 1.1ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 3.5ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 1.1ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:12 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.6ms | GC: 0.7ms)
+  Rendered posts/_post.html.erb (Duration: 4.8ms | GC: 0.7ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.6ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.7ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2025-10-23 17:29:14 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 1.5ms | GC: 0.7ms)
+  Rendered comments/_comments.html.erb (Duration: 4.6ms | GC: 0.7ms)
+  Rendered posts/_post.html.erb (Duration: 4.8ms | GC: 0.7ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.8ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.7ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started DELETE "/posts/1" for 127.0.0.1 at 2025-10-23 17:29:16 +0200
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mComment Load (5.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mComment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 1 /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 2 /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mPost Destroy (0.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 1 /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/posts
+↳ app/controllers/posts_controller.rb:55:in `block (2 levels) in destroy'
+Completed 303 See Other in 22ms (ActiveRecord: 7.0ms (5 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:16 +0200
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:29:17 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-10-23 17:29:27 +0200
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Secondo post", "body"=>"Questo è il secondo post."}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES ('Secondo post', 'Questo è il secondo post.', '2025-10-23 15:29:27.373541', '2025-10-23 15:29:27.373541') RETURNING "id" /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/posts/2
+↳ app/controllers/posts_controller.rb:28:in `block (2 levels) in create'
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2025-10-23 17:29:27 +0200
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 2 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts/2/comments" for 127.0.0.1 at 2025-10-23 17:29:31 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Prova!"}, "commit"=>"Post Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 2 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES (2, 'Prova!', '2025-10-23 15:29:31.974714', '2025-10-23 15:29:31.974714') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 302 Found in 16ms (ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:31 +0200
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.7ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-10-23 17:29:33 +0200
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2025-10-23 17:29:40 +0200
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Terzo", "body"=>"Prova terzo post."}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (3.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES ('Terzo', 'Prova terzo post.', '2025-10-23 15:29:40.983387', '2025-10-23 15:29:40.983387') RETURNING "id" /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/posts/3
+↳ app/controllers/posts_controller.rb:28:in `block (2 levels) in create'
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2025-10-23 17:29:40 +0200
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/posts/3/comments" for 127.0.0.1 at 2025-10-23 17:29:45 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"PPPPPP!"}, "commit"=>"Post Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (2.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES (3, 'PPPPPP!', '2025-10-23 15:29:45.315936', '2025-10-23 15:29:45.315936') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 302 Found in 15ms (ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:29:45 +0200
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2025-10-23 17:29:55 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 2 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 8.8ms | GC: 7.7ms)
+  Rendered comments/_comments.html.erb (Duration: 11.9ms | GC: 7.7ms)
+  Rendered posts/_post.html.erb (Duration: 12.0ms | GC: 7.7ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.9ms | GC: 7.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 7.7ms)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 7.7ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2025-10-23 17:29:56 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 5.5ms | GC: 1.6ms)
+  Rendered posts/_post.html.erb (Duration: 5.7ms | GC: 1.6ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.5ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 1.6ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2025-10-23 17:30:00 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*action='edit',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | GC: 0.6ms)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 3.1ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.6ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-10-23 17:30:00 +0200
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.3ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 4.0ms | GC: 0.6ms)
+  Rendered posts/_post.html.erb (Duration: 4.1ms | GC: 0.6ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/posts/2/comments" for 127.0.0.1 at 2025-10-23 17:30:37 +0200
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Secondo commento."}, "commit"=>"Post Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 2 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:16:in `set_post'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES (2, 'Secondo commento.', '2025-10-23 15:30:37.307148', '2025-10-23 15:30:37.307148') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts/2
+↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2025-10-23 17:30:37 +0200
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 2 LIMIT 1 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='show',application='Blog',controller='posts'*/[0m
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.2ms | GC: 0.0ms)
+  Rendered comments/_new.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered comments/_comments.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

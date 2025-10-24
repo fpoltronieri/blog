@@ -1,0 +1,18 @@
+current directory: /Users/filippopoltronieri/code/progetto_di_sistemi_web_esercizi/rails/blog/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/filippopoltronieri/.rbenv/versions/3.3.9/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/filippopoltronieri/code/progetto_di_sistemi_web_esercizi/rails/blog/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251023-14544-hbuvuj sitelibdir\=./.gem.20251023-14544-hbuvuj clean
+
+current directory: /Users/filippopoltronieri/code/progetto_di_sistemi_web_esercizi/rails/blog/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251023-14544-hbuvuj sitelibdir\=./.gem.20251023-14544-hbuvuj
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/filippopoltronieri/code/progetto_di_sistemi_web_esercizi/rails/blog/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251023-14544-hbuvuj sitelibdir\=./.gem.20251023-14544-hbuvuj install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20251023-14544-hbuvuj/racc
+
+current directory: /Users/filippopoltronieri/code/progetto_di_sistemi_web_esercizi/rails/blog/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251023-14544-hbuvuj sitelibdir\=./.gem.20251023-14544-hbuvuj clean
