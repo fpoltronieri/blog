@@ -7,3 +7,7 @@ one:
 two:
   title: MyString
   body: MyText
+
+three:
+  title: "Il mio nuovo post"
+  body: "Prova"

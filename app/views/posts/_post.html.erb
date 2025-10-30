@@ -2,13 +2,11 @@
   <article>
 
     <div>
-      <strong>Title:</strong>
-      <%= post.title %>
+      <strong><%= post.title %></strong>
     </div>
 
     <div>
-      <strong>Body:</strong>
-      <%= post.body %>
+      <p><%= post.body %></p>
     </div>
 
     <%= render "comments/comments", post: post %>
