@@ -1,5 +1,9 @@
 <h4>Comments</h4>
 
-<%= render post.comments %>
+<%= turbo_stream_from post %>
+
+<div id="comments">
+  <%= render post.comments %>
+</div>
 
 <%= render "comments/new", post: post %>
