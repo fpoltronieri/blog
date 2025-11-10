@@ -4,13 +4,11 @@
     <%= comment.content %>
   </p>
 
-  <%= if comment.user == Current.user
-    link_to "Delete",
-    post_comment_path(comment.post, comment),
-    method: :delete,
-    data: {
-      confirm: "Are you sure?",
-    }
-  end %>
+  <%= link_to "Delete",
+  post_comment_path(comment.post, comment),
+  data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?",
+  } %>
 
 </div>
