@@ -16,6 +16,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # GET post /posts/1/like
+  def like
+    @post = Post.find(params.expect(:post_id))
+    @post.increment_like
+    redirect_to posts_path, notice: "You liked this post."
+  end
+
   # GET /posts/1/edit
   def edit
   end
@@ -66,6 +73,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :title, :body ])
+      params.expect(post: [ :title, :body ]).merge(user: Current.user)
     end
 end
