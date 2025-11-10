@@ -1,0 +1,22 @@
+<div id="like_button_<%= dom_id(likeable) %>">
+
+  <% if likeable.liked_by_current_user? %>
+    <%= button_to "Unlike",
+    [likeable, likeable.current_user_like],
+    method: :delete,
+    form: {
+      data: {
+        turbo_stream: true,
+      },
+    } %>
+  <% else %>
+    <%= button_to "Like",
+    [likeable, :likes],
+    method: :post,
+    form: {
+      data: {
+        turbo_stream: true,
+      },
+    } %>
+  <% end %>
+</div>
