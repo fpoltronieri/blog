@@ -1,8 +1,10 @@
 <div id="like_button_<%= dom_id(likeable) %>">
+  <!-- _like.html.erb -->
+  <% user_like = likeable.likes.detect { |l| l.user_id == Current.user&.id } %>
 
-  <% if likeable.liked_by_current_user? %>
+  <% if user_like %>
     <%= button_to "Unlike",
-    [likeable, likeable.current_user_like],
+    [likeable, user_like],
     method: :delete,
     form: {
       data: {
