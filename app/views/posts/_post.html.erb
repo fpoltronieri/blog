@@ -12,14 +12,7 @@
     <div>
       <p><%= post.body %></p>
     </div>
-
-    <div section="likes">
-      <%= render "likes/like", likeable: post %>
-      <div id="likes_count_<%= dom_id(post) %>">
-        <%= post.likes_count %>
-        <%= "like".pluralize(post.likes_count) %>
-      </div>
-    </div>
+    <%= render "likes/like", likeable: post %>
     <%= render "comments/comments", post: post %>
   </article>
 </div>

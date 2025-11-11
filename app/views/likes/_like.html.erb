@@ -1,24 +1,14 @@
-<div id="like_button_<%= dom_id(likeable) %>">
-  <!-- _like.html.erb -->
-  <% user_like = likeable.likes.detect { |l| l.user_id == Current.user&.id } %>
-
-  <% if user_like %>
-    <%= button_to "Unlike",
-    [likeable, user_like],
-    method: :delete,
-    form: {
-      data: {
-        turbo_stream: true,
-      },
-    } %>
-  <% else %>
-    <%= button_to "Like",
-    [likeable, :likes],
-    method: :post,
-    form: {
-      data: {
-        turbo_stream: true,
-      },
-    } %>
-  <% end %>
-</div>
+<%= turbo_frame_tag dom_id(likeable, :likes) do %>
+  <% user_like = likeable.likes.find_by(user: current_user) %>
+  <div class="likes">
+    <span class="likes__count"><%= likeable.likes.size %></span>
+    <% if user_like %>
+      <%= button_to "Unlike",
+      post_like_path(likeable, likeable.user),
+      method: :delete,
+      class: "btn btn-secondary" %>
+    <% else %>
+      <%= button_to "Like", [likeable, :likes], method: :post, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>
