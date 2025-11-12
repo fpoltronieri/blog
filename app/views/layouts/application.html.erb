@@ -28,6 +28,12 @@
     <header>
       <h1>Blog Progetto di Sistemi Web</h1>
       <p>Anno Accademico 2025/2026</p>
+      <%= if authenticated?
+        #button_to "Sign Out", session_path, method: :delete
+        link_to "Log Out", session_path, data: { turbo_method: :delete }
+      else
+        link_to "Log In", new_session_path
+      end %>
     </header>
     <main>
       <p style="color: green"><%= notice %></p>

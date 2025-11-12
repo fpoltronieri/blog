@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resource :registration, only: [:new, :create]
   resource :session
+
   resources :passwords, param: :token
   resources :posts do
     resources :comments

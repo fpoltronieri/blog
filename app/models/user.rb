@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+  validates :username, presence: true
 end

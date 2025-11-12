@@ -1,7 +1,13 @@
+<%= turbo_stream_from likeable %>
+
 <%= turbo_frame_tag dom_id(likeable, :likes) do %>
   <% user_like = likeable.likes.find_by(user: current_user) %>
   <div class="likes">
-    <span class="likes__count"><%= likeable.likes.size %></span>
+
+    <span id="<%=dom_id(likeable, :likes_count)%>">
+      <%= likeable.respond_to?(:likes_count) ? likeable.likes_count : likeable.likes.count %>
+    </span>
+
     <% if user_like %>
       <%= button_to "Unlike",
       post_like_path(likeable, likeable.user),

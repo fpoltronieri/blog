@@ -9,7 +9,7 @@ module Likeable extend ActiveSupport::Concern
   end
 
   def likes_count
-    likes.size
+    likes.count
   end
 
 end
