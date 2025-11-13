@@ -4,6 +4,8 @@
     <%= comment.content %>
   </p>
 
+  <%= render "likes/like", likeable: comment %>
+
   <%= link_to "Delete",
   post_comment_path(comment.post, comment),
   data: {
