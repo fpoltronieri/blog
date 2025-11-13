@@ -9,8 +9,6 @@ class Like < ApplicationRecord
   validates :likeable_id, :likeable_type, presence: true
   validates :user_id, uniqueness: { scope: [:likeable_type, :likeable_id], message: "has already liked this item" }
 
-  #after_create_commit :broadcast_like_count 
-  #after_destroy_commit :broadcast_like_count
   after_commit :broadcast_like_count, on: [:create, :destroy]
 
   private 
@@ -23,5 +21,5 @@ class Like < ApplicationRecord
       partial: "likes/likes_count",
       locals: { likeable: likeable }
     )
-  end
+    end
 end
