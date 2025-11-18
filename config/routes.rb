@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   resource :session
+  resource :registration, only: [:new, :create] 
+
   resources :passwords, param: :token
   resources :posts do
+    # posts/:id/comments/:id/
     resources :comments
+    resources :likes, only: [:create, :destroy]
   end
+  # comments/:id/
+  resources :comments, only: [] do
+    # comments/:id/like
+    resources :likes, only: [:create, :destroy]
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

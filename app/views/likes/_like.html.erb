@@ -1,0 +1,23 @@
+<%= turbo_stream_from likeable %>
+
+<%= turbo_frame_tag dom_id(likeable, :likes) do %>
+  <% user_like = likeable.likes.find_by(user: current_user) %>
+  <div class="likes">
+
+    <span id="<%=dom_id(likeable, :likes_count)%>">
+      <%= likeable.respond_to?(:likes_count) ? likeable.likes_count : likeable.likes.count %>
+    </span>
+
+    <% if user_like %>
+      <%= button_to "Unlike",
+      polymorphic_path([likeable, user_like]),
+      method: :delete,
+      class: "btn btn-secondary" %>
+    <% else %>
+      <%= button_to "Like",
+      polymorphic_path([likeable, :likes]),
+      method: :post,
+      class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>

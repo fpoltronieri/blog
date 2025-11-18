@@ -11,6 +11,8 @@
       <p><%= post.body %></p>
     </div>
 
+    <%= render "likes/like", likeable: post %>
+
     <%= render "comments/comments", post: post %>
 
   </article>

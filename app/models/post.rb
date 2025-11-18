@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
+  include Likeable
   has_many :comments, dependent: :destroy
+  has_many :likes, as: :likeable, dependent: :destroy
   belongs_to :user # aggiunta dipendenza con User 
   broadcasts_to ->(post) { "posts" }
 
